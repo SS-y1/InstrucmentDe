@@ -39,7 +39,7 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);  //创建画布
+    createCanvas(1800, 900);  //创建画布
 
     colorMode(HSB);
     strokeCap(ROUND); //PROJECT for rectangles, ROUND for circles and rounded rectangles
@@ -77,63 +77,63 @@ function setup() {
 
     slider = createSlider(0,1,0.5,0.01);
     slider.position(40, 30);
-    slider.size(200);
+    slider.size(width/9);
 
     sliderPanio = createSlider(0,1,0.5,0.01);
-    sliderPanio.position(width/9-15,height/2-12+55+70+40);
-    sliderPanio.size(100);
+    sliderPanio.position(width/9-height/60,height/1.48);
+    sliderPanio.size(width/18);
 
     sliderDrum = createSlider(0,1,0.5,0.01);
-    sliderDrum.position(width/2-350,height/4-92+80);
-    sliderDrum.size(100);
+    sliderDrum.position(width/2-height/2.57,height/4-height/75);
+    sliderDrum.size(width/18);
 
     sliderGuitar = createSlider(0,1,0.5,0.01);
-    sliderGuitar.position(width/4*3-110,height/4-62-40);
-    sliderGuitar.size(100);
+    sliderGuitar.position(width/4*3-height/8,height/4-height/8.8);
+    sliderGuitar.size(width/18);
 
     //
-    button = createButton("PLAY"); //开始按钮
-    button.position(40, 80);
+    button = createButton(" 播   放 "); //开始按钮
+    button.position(width/45, width/45*2);
     button.mousePressed(playSong);
 
-    button1 = createButton("PAUSE"); //暂停按钮
-    button1.position(40, 130);
+    button1 = createButton(" 暂  停 "); //暂停按钮
+    button1.position(width/45, width/45*13/4);
     button1.mousePressed(pauseSong);
 
-    button2 = createButton("STOP"); //暂停按钮
-    button2.position(40, 180);
+    button2 = createButton(" 停  止"); //暂停按钮
+    button2.position(width/45, width/10);
     button2.mousePressed(stopSong);
 
-    button3 = createButton("JUMP"); //跳转按钮
-    button3.position(40, 230);
+    button3 = createButton(" 快  进 "); //跳转按钮
+    button3.position(width/45, width/45*23/4);
     button3.mousePressed(jumpSong);
 
-    button4 = createButton("PLAY"); //钢琴音频播放按钮
+    button4 = createButton(" 播  放 "); //钢琴音频播放按钮
     button4.position(width/9-15,height/2-12+55+30);
     button4.mousePressed(playPanio);
 
-    button5 = createButton("PAUSE"); //钢琴音频暂停按钮
+    button5 = createButton(" 暂  停 "); //钢琴音频暂停按钮
     button5.position(width/9-15,height/2-12+55+70);
     button5.mousePressed(pausePanio);
 
-    button6 = createButton("PLAY"); //鼓音频播放按钮
+    button6 = createButton(" 播  放 "); //鼓音频播放按钮
     button6.position(width/2-350,height/4-92);
     button6.mousePressed(playDrum);
 
-    button7 = createButton("PAUSE"); //鼓音频暂停按钮
+    button7 = createButton(" 暂  停 "); //鼓音频暂停按钮
     button7.position(width/2-350,height/4-92+40);
     button7.mousePressed(pauseDrum);
 
-    button8 = createButton("PLAY"); //吉他音频播放按钮
+    button8 = createButton(" 播  放 "); //吉他音频播放按钮
     button8.position(width/4*3-110,height/4-62);
     button8.mousePressed(playGuitar);
     //
-    button9 = createButton("PAUSE"); //吉他音频暂停按钮
+    button9 = createButton(" 暂  停 "); //吉他音频暂停按钮
     button9.position(width/4*3-110,height/4-62+40);
     button9.mousePressed(pauseGuitar);
 
     sel = createSelect(); //速度下拉框
-    sel.position(40, 280);
+    sel.position(width/45, width/45*28/4);
     sel.option('0.5x');
     sel.option('0.75x');
     sel.option('1x');
@@ -144,14 +144,14 @@ function setup() {
     sel.changed(speedSong);
 
     sel1 = createSelect(); //颜色下拉框
-    sel1.position(40, 330);
-    sel1.option('white');
-    sel1.option('pink');
-    sel1.option('yellow');
-    sel1.option('rainbow');
-    sel1.option('blue');
-    sel1.option('green');
-    sel1.selected('white');
+    sel1.position(width/45, width/45*33/4);
+    sel1.option('白色');
+    sel1.option('粉色');
+    sel1.option('黄色');
+    sel1.option('彩虹色');
+    sel1.option('蓝色');
+    sel1.option('绿色');
+    sel1.selected('白色');
     sel1.changed(changeColor);
 
 
@@ -168,15 +168,15 @@ function draw() {
     strokeWeight(2);
     ellipse(width/2,height,width);
 
-    textSize(22);
+    textSize(16);
 
  //   main.setVolume(slider.value());
 
-    text(int(slider.value()*100),250,40);
-    textSize(20);
-    text(int(sliderPanio.value()*100),width/9-15+100,height/2-12+55+70+40+10);
-    text(int(sliderDrum.value()*100), width/2-350+100,height/4-92+80+10);
-    text(int(sliderGuitar.value()*100), width/4*3-110+100,height/4-62-40+10);
+    text(int(slider.value()*100),width/7.2,width/45);
+    textSize(16);
+    text(int(sliderPanio.value()*100),height/3.16,height/1.46);
+    text(int(sliderDrum.value()*100), width/2-height/3.6,height/4.1);
+    text(int(sliderGuitar.value()*100), width/4*3-width/180,height/4-height/9.9);
 
 
 
@@ -226,7 +226,7 @@ function drawPanio(){
 
     noStroke();
     fill('#B0C4DE');
-    let r = map(vol3, 0, 1, 260, 430);
+    let r = map(vol3, 0, 1, width/7, width/4);
     ellipse(width/4,height/2,r);
     //Ppanio.stop();
    // image(Ppanio, width/4-125, height/2-125);
@@ -234,19 +234,19 @@ function drawPanio(){
   drawAmp(fft3,amp3,width/4,height/2);
 
     if(flag==false){
-        image(PpanioGif, width/4-125, height/2-125);
+        image(PpanioGif, width/4-height/7.2, height/2-height/7.2);
     }else{
-        image(Ppanio, width/4-125, height/2-125);
+        image(Ppanio, width/4-height/7.2, height/2-height/7.2);
     }
   //  console.log(vol3);
   fill(220);
 
-  rect(width/9-20,height/2-12,10,55);
-  textSize(24);
+  rect(width/9-width/90,height/2-height/200,width/200,width/50);
+  textSize(18);
   textStyle(BOLD);
   textFont('Courier New');
-  text('Piano',width/9,height/2);
-  text('钢琴',width/9,height/2+40);
+  //text('Piano',width/9,height/2);
+  text('钢琴',width/9,height/2+height/45);
 
 }
 
@@ -256,7 +256,7 @@ function drawDrum(){
 
     noStroke();
     fill('#FFE4E1');
-    let r1 = map(vol1, 0, 1, 270, 450);
+    let r1 = map(vol1, 0, 1, height/3.3, height/2);
     ellipse(width/2,height/4,r1);
    // image(Pdrum, width/2-120, height/4-160);
     //ellipse(width/2,height/4,vol1*200)
@@ -264,18 +264,19 @@ function drawDrum(){
     drawAmp(fft1,amp1,width/2,height/4);
     //console.log(vol1);
     if(flag==false){
-        image(PdrumGif, width/2-120, height/4-160);
+        image(PdrumGif, width/2-width/14, height/4-height/5.625);
     }else{
-        image(Pdrum, width/2-120, height/4-160);
+        image(Pdrum, width/2-width/14, height/4-height/5.625);
     }
 
     fill(220);
-    rect(width/2-280,height/4-92,10,55);
-    textSize(24);
+
+    rect(width/2-width/6.42,height/4-height/10.5,width/200,width/50);
+    textSize(18);
     textStyle(BOLD);
     textFont('Courier New');
-    text('Drum',width/2-260,height/4-80);
-    text('鼓',width/2-260,height/4-40);
+  //  text('Drum',width/2-260,height/4-80);
+    text('鼓',width/2.8,height/5.45);
 
 }
 
@@ -285,26 +286,27 @@ function drawGuitar(){
     let vol2 = amp2.getLevel();
     noStroke();
     fill('#FFEBCD');
-    let r2 = map(vol2, 0, 1, 260, 450);
+    let r2 = map(vol2, 0, 1, width/6.9, height/2);
     ellipse(width/4*3,height/2,r2);
    // image(Pguitar, width/4*3-110, height/2-120);
    // ellipse(900,400,vol2*300)
     //stroke('#F0E68C');
     drawAmp(fft2,amp2,width/4*3,height/2);
     if(flag==false){
-        image(PguitarGif, width/4*3-120, height/2-140);
+        image(PguitarGif, width/4*3-width/15, height/2-height/6.43);
     }else{
-        image(Pguitar, width/4*3-120, height/2-140);
+        image(Pguitar, width/4*3-width/15, height/2-height/6.43);
     }
 
 
     fill(220);
-    rect(width/4*3-40,height/4-62,10,55);
-    textSize(24);
+
+    rect(width/4*3-width/45,height/4-width/35,width/200,width/50);
+    textSize(18);
     textStyle(BOLD);
     textFont('Courier New');
-    text('Guitar',width/4*3-20,height/4-50);
-    text('吉他',width/4*3-20,height/4-10);
+    // text('Guitar',width/4*3-20,height/4-50);
+    text('吉他',width/4*3-width/90,height/4-width/60);
 }
 
 function drawMain(){
@@ -312,22 +314,22 @@ function drawMain(){
     let vol = amp.getLevel();
     noStroke();
     fill('#E6E6FA');
-    let r = map(vol, 0, 1, 260, 430);
+    let r = map(vol, 0, 1, width/6.9, height/2.09);
     ellipse(width/2,height/4*3,r);
     //image(Pmain, width/2-120, height/4*3-125);
     //ellipse(width/2,height/4*3,vol*200)
    // stroke('#87CEEB');
     drawAmp(fft,amp,width/2,height/4*3);
     if(flag==false){
-        image(PmainGif, width/2-120, height/4*3-125);
+        image(PmainGif, width/2-width/15, height/4*3-height/7.2);
     }else{
-        image(Pmain, width/2-120, height/4*3-125);
+        image(Pmain, width/2-width/15, height/4*3-height/7.2);
     }
     fill(255);
-    textSize(42);
+    textSize(24);
     textStyle(BOLD);
     textFont('Courier New');
-    text('Main Melody',width/2-120,height-20);
+    text(' 主  旋  律',width/2-width/22.5,height-height/45);
 }
 
 function drawAmp(fft,amp,w,h){
@@ -519,17 +521,17 @@ function speedSong(){
 function changeColor(){
     let item1 = sel1.value();
 
-    if(item1=='pink') {
+    if(item1=='粉色') {
         colorflag = 1;
-    }else if(item1=='white'){
+    }else if(item1=='白色'){
         colorflag = 0;
-    }else if(item1=='yellow'){
+    }else if(item1=='黄色'){
         colorflag = 2;
-    }else if(item1=='blue'){
+    }else if(item1=='蓝色'){
         colorflag = 3;
-    }else if(item1=='green'){
+    }else if(item1=='绿色'){
         colorflag = 4;
-    }else if(item1=='rainbow'){
+    }else if(item1=='彩虹色'){
         colorflag = 5;
     }
 
@@ -569,18 +571,20 @@ function sliderVolumeChange(){
     panio.setVolume(slider.value());
     sliderPanio.remove();
     sliderPanio = createSlider(0,1,slider.value(),0.01);
-    sliderPanio.position(width/9-15,height/2-12+55+70+40);
-    sliderPanio.size(100);
+    sliderPanio.position(width/9-height/60,height/1.48);
+    sliderPanio.size(width/18);
+
     drum.setVolume(slider.value());
     sliderDrum.remove();
     sliderDrum = createSlider(0,1,slider.value(),0.01);
-    sliderDrum.position(width/2-350,height/4-92+80);
-    sliderDrum.size(100);
+    sliderDrum.position(width/2-height/2.57,height/4-height/75);
+    sliderDrum.size(width/18);
+
     guitar.setVolume(slider.value());
     sliderGuitar.remove();
     sliderGuitar = createSlider(0,1,slider.value(),0.01);
-    sliderGuitar.position(width/4*3-110,height/4-62-40);
-    sliderGuitar.size(100);
+    sliderGuitar.position(width/4*3-height/8,height/4-height/8.8);
+    sliderGuitar.size(width/18);
 }
 
 function PaniosliderVolumeChange(){
