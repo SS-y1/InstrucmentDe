@@ -76,7 +76,7 @@ function setup() {
   //  fft.setInput(panio,drum,guitar);
 
     slider = createSlider(0,1,0.5,0.01);
-    slider.position(40, 30);
+    slider.position(width/45, height/30);
     slider.size(width/9);
 
     sliderPanio = createSlider(0,1,0.5,0.01);
@@ -358,7 +358,7 @@ function drawAmp(fft,amp,w,h){
         x2 = x1 * modifier;
         y2 = y1 * modifier;
 
-        strokeWeight((level+1)*6);
+        strokeWeight((level+1)*4);
         stroke(225);
         if(colorflag==0){
             stroke(225);
