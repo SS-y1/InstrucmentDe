@@ -39,7 +39,7 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(1600, 700);  //创建画布
+    createCanvas(windowWidth, 900);  //创建画布
 
     colorMode(HSB);
     strokeCap(ROUND); //PROJECT for rectangles, ROUND for circles and rounded rectangles
@@ -382,6 +382,7 @@ function drawAmp(fft,amp,w,h){
 
 
 function playSong(){
+    // justTest.hello('success!!!!');
     if((!panio.isPlaying())&&(!drum.isPlaying())&&(!guitar.isPlaying())){
        // main.play();
         panio.play();
