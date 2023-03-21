@@ -39,7 +39,7 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(windowWidth, 900);  //创建画布
+    createCanvas(1600, 800);  //创建画布
 
     colorMode(HSB);
     strokeCap(ROUND); //PROJECT for rectangles, ROUND for circles and rounded rectangles
